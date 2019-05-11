@@ -59,7 +59,7 @@
 		\noindent\hangindent=2em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
+		\hspace{1.5em} \parbox{6\spacebox}{#2} \par}    % Entry value	
 		
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
@@ -148,7 +148,7 @@
 \SkillsEntry{}{Spansih (A2)}
 \sepspace
 
-\SkillsEntry{Hobbies}{Historical Swordsmanship, Karate and Jui-Jitsu}
+\SkillsEntry{Hobbies}{Historical Swordsmanship, Karate and Jiu-Jitsu}
 \SkillsEntry{}{Piano and formerly Clarinet}
 \SkillsEntry{}{Home Cooking}
 
@@ -157,6 +157,8 @@
 \NewPart{Soft Skills}{}
 
 % Full sentences here
+
+\SkillsEntry{Work Flow}{Software Development has taught me not only about Software Architecture and Good PRactice, but more importantly to manage work resources and make the best of what is available with a focus on quality and a plan for future improvements.}
 
 \SkillsEntry{Communication}{Presentations at Uni, Customer Presentations at iHP}
 \sepspace
@@ -168,6 +170,21 @@
 \sepspace
 
 \SkillsEntry{Gaming}{Focus on Accuracy and particularly Medieval and Roman, some Fantasy. Split between Strategy and RPG/First Person}
+
+%%% Disadvantages
+%%% ------------------------------------------------------------
+\NewPart{Disadvantages}
+
+\SkillsEntry{Lack of Experience}{While I have researrched adn somewhat dreamt of working in game development, I have no practical experience and no previous projects to demonstrate my potential.}
+\sepspace
+
+\SkillsEntry{New to C\#}{Thus far my main work has been in Java. While the C family is somewhat different, I do believe that it will be easier for me to get into than for example Mathematica has been in the past.}
+\sepspace
+
+\SkillsEntry{New to Unity}{My first experience with the Unity Engine is my research into it as I am writing this application.}
+\sepspace
+
+\SkillsEntry{Schedule}{The project would have to be scheduled around my full time employment.}
 
 
 % ! WIP ! WIP ! WIP ! WIP ! WIP ! WIP ! WIP ! WIP ! 
