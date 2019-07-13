@@ -1,0 +1,189 @@
+% WIP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WIP
+% CV for Gaming Project: Sonke Wohler
+% WIP
+%
+% Based on the Template from  Akash Benerjee: https://www.overleaf.com/articles/akash-banerjees-cv/qcxhvqqybqrq
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: May 2019
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+\usepackage{sectsty}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} \parbox{6\spacebox}{#2} \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{S\"onke W\"ohler}
+\MySlogan{Programmer and Physics Graduate}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+\PersonalEntry{Birth}{7 May 1996}
+\PersonalEntry{Address}{2A Fraser Street, AB25 3XS, Aberdeen}
+\PersonalEntry{Mobile}{07484 183216}
+\PersonalEntry{Mail}{\url{sonke.a.wohler@gmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{BSc (Joint Hons) Computing Science and Physics}{2015-Present}{University of Aberdeen}{Expected 2:1 in June 2019}
+
+\sepspace
+
+\EducationEntry{Albert Einstein Gymnasium}{2012-2015}{Karlsuhe, Germany}{Graduated Valedictorian at A3 equivalent}
+% \EducationEntry{Albert Einstein Gymnasium}{2012-2015}{Karlsuhe, Germany}{Graduated Valedictorian at 92\%}
+
+
+%%% Projects
+%%% ------------------------------------------------------------
+\NewPart{Experience}{}
+
+\WorkEntry{Current Employment}{Jun 2019-Mar 2020}{Data related Software Development for the Oil \& Gas Industry}{With the University of Aberdeen on behalf of HyperDap}
+\sepspace
+
+\WorkEntry{Intelligent Hydrate Platform (iHP)}{Apr 2018-Apr 2019}{Hydrate formation management system for hydrocarbon extraction}{With the University of Aberdeen on behalf of Blue Gentoo}
+\sepspace
+
+
+%\WorkEntry{Honours Project}{Jan 2019-Apr 2019}{Data analysis with the help of calculus}{Supervision: Dr Ernesto Compatangelo \\ Contribution: HyperDap}
+%\sepspace
+
+
+\WorkEntry{University Projects}{Sep 2017-Apr 2019}{Experience gathered from specific courses}{
+  Honours Project: Data analysis with the help of calculus \\ Mathematical Modelling: Volleyball setter decisions \\Experimental Physics: Various (including optics, electronics and thermodynamics) \\ Software Engineering: Scheduling medication times \\  Scientific Programming: Traffic modelling \\ Class-Rep for Computing and for Physics \\ Committee member for Friends of MSF Society}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\clearpage
+\NewPart{Hard Skills}{}
+
+\SkillsEntry{Programming}{Java (8-11, FX, -script), Python (numpy), C\# (for Unity Engine),}
+\vspace{3pt}
+\SkillsEntry{}{Mathematica, MatLab, SQL, CQL, Assembler}
+\sepspace
+
+\SkillsEntry{Various}{Unity Engine, advanced Mathematics and Statistics, Experimental}
+\vspace{3pt}
+\SkillsEntry{}{Physics, Microsoft Office Suite, LaTeX}
+\sepspace
+
+\SkillsEntry{Languages}{German (native)}
+\SkillsEntry{}{English (C2)}
+\SkillsEntry{}{Romanian (A2)}
+\SkillsEntry{}{Spansih (A2)}
+\sepspace
+
+\SkillsEntry{Hobbies}{Historical Swordsmanship, Karate and Jiu-Jitsu}
+\SkillsEntry{}{Home Cooking}
+\SkillsEntry{}{Piano}
+
+%%% More Skills 
+%%% ------------------------------------------------------------
+\NewPart{Soft Skills}{}
+
+\SkillsEntry{Work Flow}{Software Development has taught me not only about Software Archi-}
+\vspace{3pt}
+\SkillsEntry{}{tecture and Good Practice, but more importantly to manage work resources and make the best of what is available with a focus on quality and a plan for future improvements.}
+\sepspace
+
+\SkillsEntry{Teamwork}{My previous projects, both within and without university, have pro-}
+\vspace{3pt}
+\SkillsEntry{}{vided me with diverse teamwork experience, usually with group members of various backgrounds such as programming, engineering, bio-medical sciences or historical interest.}
+\sepspace
+
+\SkillsEntry{Diversity}{I like to have diversity in my learning and very much enjoy applying }
+\vspace{3pt}
+\SkillsEntry{}{knowledge from one domain to solve a seemingly unrelated problem in another; which very often aids my understanding of each domain.}
+\sepspace
+
+% \SkillsEntry{Specific}{I have some specific skill for this post.}
+
+%%% Disadvantages
+%%% ------------------------------------------------------------
+%\NewPart{Disadvantages}
+%
+%\SkillsEntry{Experience}{I haven't done this exact thing, just things like it...}
+
+
+
+% ! WIP ! WIP ! WIP ! WIP ! WIP ! WIP ! WIP ! WIP ! 
+\end{document}
+

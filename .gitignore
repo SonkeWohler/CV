@@ -12,9 +12,10 @@ main.pdf
 *.glo
 *.ist
 *.glsdefs
-###Templates
-Templates/
 ###PDFs
+MedivalGame.pdf
+MedievalGameStatement.pdf
+CV.pdf
 
 ## excel files
 *.htm
