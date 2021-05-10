@@ -6,6 +6,13 @@ being the target.
 
 ## Skills to mention in cover
 
+### SOP
+
+Sometimes you have to work with a chryostat older than Hang and you have to
+figure things out and it is good to be able to take initiative and explore what
+is best suited for the task at hand.  And my PhD student seemed quite pleased
+with my temperature suggestions.
+
 ### Imunocytochemistry/histochemistry
 
 Cell proliferation during development chickens using immunohistochemistry
@@ -21,7 +28,7 @@ DNA extraction.
 Xenopus, everything that didn't require licensing at the time.
 
 * egg fertilisation (from scratch)
-* treatment (working with solutions
+* treatment (working with solutions)
 * observing axis malformation
 
 Mouse in Honours Project

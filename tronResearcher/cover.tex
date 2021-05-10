@@ -27,6 +27,7 @@
 \usepackage{url}
 \usepackage{sectsty}
 \usepackage{enumitem}
+\usepackage{xcolor}
 
 %%% Options
 %%% ------------------------------------------------------------
@@ -36,8 +37,23 @@
 \textheight=700px                    % Saving trees ;-)
 \renewcommand\labelitemi{$\diamond$}   % different bullets for lists
 
-%%% Macros
+%%% Custom sectioning (sectsty package)
 %%% ------------------------------------------------------------
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Colours
+%%% ------------------------------------------------------------
+
+  \definecolor{headerColor}{HTML}{FF4800}
+  \definecolor{titleColor}{HTML}{428BCA}
+  \definecolor{lineColor}{HTML}{428BCA}
+
+%%% Macros for the Layout
+%%% ------------------------------------------------------------
+  
 \newlength{\spacebox}
 \settowidth{\spacebox}{8888888888}			% Box to align text
 \newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
@@ -46,7 +62,7 @@
   \Huge \usefont{OT1}{phv}{b}{n} \hfill #1
   \par \normalsize \normalfont}
 
-\newcommand{\MySlogan}[4]{ % Slogan (optional)
+\newcommand{\MyCoverSlogan}[4]{ % Slogan (optional)
   \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1} 
   \sepspace
   \par \normalsize \usefont{OT1}{phv}{m}{n}\hfill \textit{#2}
@@ -54,12 +70,48 @@
   \par \normalsize \usefont{OT1}{phv}{m}{n}\hfill \textit{#4}
   \par \normalsize \normalfont}
 
+%%% specifically CV
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} \parbox{6\spacebox}{#2} \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
 %%% Document
 %%% ------------------------------------------------------------
 \begin{document}
   
   \MyName{Diana Andreea Judea}
-  \MySlogan{Graduate of Human Embryology}{Piata Bucuresti 4, Bl. Turn 4, Ap. 34, Oradea, Romania}{dianajudea@gmail.com}{+40 771 318 006}
+  \MyCoverSlogan{Human Embryology with Developmental Biology}{Piata Bucuresti 4, Bl. Turn 4, Ap. 34, Oradea, Romania}{dianajudea@gmail.com}{+40 771 318 006}
   \sepspace \sepspace
   
   \noindent
@@ -146,6 +198,121 @@
   \end{itemize}
   
   \cleardoublepage
+  
+  \cleardoublepage
+  
+  % you can upload a photo and include it here...
+  %\begin{wrapfigure}{l}{0.5\textwidth}
+  %	\vspace*{-2em}
+  %		\includegraphics[width=0.15\textwidth]{photo}
+  %\end{wrapfigure}
+
+  %%% CV
+  %%% ------------------------------------------------------------
+
+  %%\MyName{Diana Andreea Judea}
+  %%\MySlogan{Embryology Graduate}
+
+  %%\sepspace
+
+  %%% Personal details
+  %%% ------------------------------------------------------------
+  \NewPart{Personal details}{}
+
+  \PersonalEntry{Birth}{2 November 1995}
+  \PersonalEntry{Address}{Piata Bucuresti 4, Bl. Turn 4, Ap. 34, Oradea, Romania}
+  \PersonalEntry{Mobile}{0040 771 318 006}
+  \PersonalEntry{Mail}{\url{dianajudea@gmail.com}}
+
+  %%% Education
+  %%% ------------------------------------------------------------
+  \NewPart{Education}{}
+
+  \EducationEntry{BSc (Hons) Human Embryology and Developmental Biology}{2016-2020}{University of Aberdeen}{Graduated Upper Second \\ Wet Laboratory Training}
+
+  \sepspace
+
+  \EducationEntry{Nurse Apprenticeship}{2015-2016}{Vasile Voiculescu Nursing School \\ Oradea, Romania}{Completed First Year of Training}
+
+  \sepspace
+
+  \EducationEntry{Baccalaureate in the Natural Sciences}{2011-2015}{Mihai Eminescu National College \\ Oradea, Romania}{Graduated at 81\%}
+
+
+  %%% Projects
+  %%% ------------------------------------------------------------
+
+  %%% Skills
+  %%% ------------------------------------------------------------
+  %\clearpage
+  \NewPart{Hard Skills}{}
+
+  \SkillsEntry{Analysis}{Microscopes Nikon SMZ 1500 and Zeiss DXM 1200 (fluorescent)}
+  \SkillsEntry{}{Data Analysis with GraphPad Prism}
+  \SkillsEntry{}{Image processing with ImageJ and Photoshop}
+  \SkillsEntry{}{European Computer Driving License}
+  \sepspace
+
+  \SkillsEntry{Organisms}{Mouse}
+  \SkillsEntry{}{\begin{itemize}[noitemsep,topsep=0pt]
+      \item In Situ Hybridisation
+      \item Vibratome 1000 Plus and Chryostat Leica CM1800 Sectioning
+      \item In Vitro Transcruption
+      \item Small scale Immunocytochemistry on NSC-34-cultures
+      %%\item Electrophoresis
+    \end{itemize}}
+    \vspace{3pt}
+  \SkillsEntry{}{Escherichia Coli}
+  \SkillsEntry{}{\begin{itemize}[noitemsep,topsep=0pt]
+      \item Small scale DNA manipulation under DNA-ase free conditions
+      \item Simple cloning %%(restriction digestion of DNA, ligation, transformation, selection of transformants and agarose gel electrophoresis
+      \item Restriction Mapping
+    \end{itemize}}
+    \vspace{3pt}
+  \SkillsEntry{}{Xenopus}
+  \SkillsEntry{}{\begin{itemize}[noitemsep,topsep=0pt]
+      \item In Vitro Fertilisation
+      \item Disrupting Axis Development
+    \end{itemize}}
+    \vspace{3pt}
+  \SkillsEntry{}{Chicken}
+  \SkillsEntry{}{\begin{itemize}[noitemsep,topsep=0pt]
+        \item Brief Immunohistochemistry
+    \end{itemize}}
+    \vspace{3pt}
+  \SkillsEntry{}{Human}
+  \SkillsEntry{}{\begin{itemize}[noitemsep,topsep=0pt]
+      \item Training in collection of samples
+    \end{itemize}}
+  \sepspace
+
+  \clearpage
+  %%% More Skills 
+  %%% ------------------------------------------------------------
+  \NewPart{Soft Skills}{}
+  
+  \SkillsEntry{Curiosity}{When I had free time in the laboratory I enjoyed
+  observing other}
+  \vspace{3pt}
+  \SkillsEntry{}{people's work.  At times they were willing to teach me for
+  example to harvest chicken samples.}
+  \sepspace
+
+  \SkillsEntry{Responsibility}{Along with attention to detail, I believe I can handle responsibility. }
+  \vspace{3pt}
+  \SkillsEntry{}{I have had it often in the past and in particular in nursing training, where  I have been in charge of patient monitoring, minor treatments and maintaining sanitary conditions in treatment environments.}
+  \sepspace
+
+  \SkillsEntry{Creativity}{I Pride myself to find novel solutions when I believe this is beneficial and appropriate.}
+  \vspace{3pt}
+  \SkillsEntry{}{}
+  \sepspace
+
+  \NewPart{References}
+
+  Dr Ross MacPherson: r.f.macpherson@abdn.ac.uk \\
+  Derryck Shewan: d.shewan@abdn.ac.uk \\
+  Marta Chelemen: icelemen@gmail.ro
   
   \includegraphics[width=\textwidth]{didiDiploma}
 
