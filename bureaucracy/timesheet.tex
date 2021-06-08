@@ -1,0 +1,67 @@
+\documentclass{letter}
+
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[svgnames]{xcolor}
+\usepackage{array}
+\usepackage[a4paper, margin=3cm]{geometry}
+
+\definecolor{myBlue}{HTML}{0F0F87}
+
+\begin{document}
+%-- header with logo, my address and stating this is a timesheet
+  \hfill \LARGE \textbf{Timesheet}  \normalsize 
+  \color{myBlue}  \rule{\textwidth}{3pt}  \color{black}
+  \vspace{3pt}
+
+  \begin{minipage}{0.2\textwidth}
+    \includegraphics[height=3cm]{myLogo.jpg} 
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.4\textwidth}
+    \Large
+    \textbf{Sonke Wohler}  \vspace{3pt}  \\
+    \large
+    address  \\
+    place  \\
+    county  \vspace{2pt}  \\
+    postcode  \\\\
+    phone: ---
+    email: ---
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.1\textwidth}
+  \end{minipage}
+
+%-- Information about invoice timeframe
+  \vspace{20pt}
+
+  \begin{tabular}{ p{0.3\textwidth}  p{0.4\textwidth} }
+    Project Title: & ---  \vspace{3pt}   \\
+    Date Issued: & ---       \vspace{3pt}  \\ 
+    Week of Year: & xx  \vspace{3pt}  \\
+    Weeks since Project start: & xx
+  \end{tabular}
+
+  \vspace{20pt}  \hfill
+
+  \begin{tabular}{ m{0.3\textwidth}  m{0.1\textwidth}  m{0.1\textwidth}  m{0.1\textwidth}  m{0.3\textwidth}  }
+    \large Short Task description & Task Identifier & intended hours & spent hours & Notes, task status or issues performing the task \\
+    \hline \hline
+    % WPT stands for Work Package Task i.e. a task inside a work package that has been defined in the contract
+    task & WPT-x.x & xx & xx & complete/on time \\
+    \hline
+    unexpected task & --- & xx & xx & reason for task  \\
+    \hline
+    task & WPT-x.x & xx & xx & waiting for 3rd party input  \\
+    \hline
+    Weekly Team meeting & WPT-4.1 & 1 & 1 & --- \\
+    \hline
+    Weekly client meeting & WPT-4.2 & 1 & 1 & --- \\
+    \hline
+                                &&&&\\
+    Total: & & xx & xx & \\
+  \end{tabular}
+
+\end{document}
