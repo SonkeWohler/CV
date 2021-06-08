@@ -1,0 +1,68 @@
+\documentclass{letter}
+
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[svgnames]{xcolor}
+\usepackage{array}
+\usepackage[a4paper, margin=3cm]{geometry}
+
+\definecolor{myBlue}{HTML}{0F0F87}
+
+\begin{document}
+%-- header with logo, my address and stating this is an invoice
+  \hfill \LARGE \textbf{Invoice}  \normalsize 
+  \color{myBlue}  \rule{\textwidth}{3pt}  \color{black}
+  \vspace{3pt}
+
+  \begin{minipage}{0.2\textwidth}
+    \includegraphics[height=3cm]{myLogo.jpg} 
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}{0.4\textwidth}
+    \Large
+    \textbf{Sonke Wohler}  \vspace{3pt}  \\
+    \large
+    street  \\
+    city  \\
+    county  \vspace{2pt}  \\
+    postcoe  \\\\
+    phone: ---  \\
+    email: ---
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.1\textwidth}
+  \end{minipage}
+
+%-- Information about invoice addressee and number
+  \vspace{20pt}
+
+  \begin{tabular}{ p{0.1\textwidth}  p{0.3\textwidth} p{0.1\textwidth}  p{0.25\textwidth}  p{0.2\textwidth} }
+    Bill to: & \large Name \normalsize & & Project Title: & --- \\
+             & office & & University Reference: & --- \\
+             & --- & & Date: & --- \\
+             & company & & & \\
+             & address & & & \\
+             & postcode & & & \\
+  \end{tabular}
+
+  \vspace{20pt}  \hfill
+
+  \begin{tabular}{ p{0.5\textwidth} p{0.2\textwidth} p{0.2\textwidth} }
+    Task & Duration & Cost   \\
+    \hline \hline
+    Consultations leading up to project start & xx hours & £xxx.xx   \\
+    Project Setup  and Management & xx hours & £xxx.xx   \\
+    Software Upgrading & xx hours & £xxx.xx \\
+    Software Interoperation & xx hours & £xxx.xx \\
+    \hline
+    Total: & xxx hours & £xxxx.xx
+  \end{tabular}
+
+  \vspace{20pt}
+  
+  All charges are inclusive of VAT and represent the final cost of the service. \\\\
+
+  %Charges calculated on an hourly rate of £23.60, inclusive of VAT.
+
+\end{document}
